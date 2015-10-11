@@ -57,15 +57,43 @@
     list-style: none;
 }
 .ts-toast .ts-toast-msg {
-    padding: 15px;
+    padding: 10px 15px 10px 25px;
     margin-bottom: 20px;
     border: 1px solid transparent;
+    position: relative;
 }
 
 .ts-toast-msg-green {
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6;
+}
+.ts-toast-sign {
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    font-size: 20px;
+}
+
+
+.ts-toast-close {
+    padding: 0px 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    opacity: .2;
+}
+
+.ts-toast-close:hover, .ts-toast-close:focus {
+    text-decoration: none;
+    opacity: .5;
 }
 /*.ts-toast .ts-toast-msg-count {*/
     /*display: inline-block;*/

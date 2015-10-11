@@ -3,8 +3,8 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Toast</title>
-    <link rel="stylesheet" href="src/ts.toast.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="src/ts.toast.css">
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="src/ts.toast.js"></script>
     <script type="text/javascript" src="app.js"></script>
@@ -30,12 +30,21 @@
 <div class="ts-toast ts-toast-right ts-toast-top">
     <ul class="ts-toast-list">
         <li class="ts-toast-msg alert-success alert-dismissible" ts-repeat="message in messages" message="message">
-            <button type="button" class="close" ts-if="message.dismissButton" ts-bind-html="message.dismissButtonHtml" ts-click="!message.dismissOnClick &amp;&amp; dismiss()">
+            <a class="ts-toast-close" ts-if="message.dismissButton" ts-bind-html="message.dismissButtonHtml" ts-click="!message.dismissOnClick &amp;&amp; dismiss()">
                 ×
-            </button>
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <h5>Success</h5>
-            <span>message detail ...</span>
+            </a>
+            <span class="ts-toast-sign glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <h4>Success</h4>
+            <span>message detail message detailmessage detail message detail</span>
+        </li>
+
+        <li class="ts-toast-msg alert-success alert-dismissible" ts-repeat="message in messages" message="message">
+            <a class="ts-toast-close" ts-if="message.dismissButton" ts-bind-html="message.dismissButtonHtml" ts-click="!message.dismissOnClick &amp;&amp; dismiss()">
+                ×
+            </a>
+            <span class="ts-toast-sign glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <h4>Success</h4>
+            <span>message detail </span>
         </li>
     </ul>
 </div>
