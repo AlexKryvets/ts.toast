@@ -5,8 +5,11 @@
     angular.module('tsToast', []);
 
     var ToastProvider = function () {
+        var messages = [{title: 'Success', text: 'Connection ok!'}, {title: 'Error', text: 'Connection failed!'}];
         this.$get = function () {
-
+            return {
+                messages: messages
+            }
         };
     };
 
@@ -14,26 +17,35 @@
 
     angular.module('tsToast').provider('tsToast', ToastProvider);
 
-    var ToastDirective = function ($log) {
+    var ToastListDirective = function ($log, tsToast) {
         return {
             replace: true,
             restrict: 'E',
-            template: '<div class="ts-toast"></div>',
-            //'<div class="ng-toast ng-toast--{{hPos}} ng-toast--{{vPos}} {{animation ? \'ng-toast--animate-\' + animation : \'\'}}">' +
-            //'<ul class="ng-toast__list">' +
-            //'<toast-message ng-repeat="message in messages" ' +
-            //'message="message" count="message.count">' +
-            //'<span ng-bind-html="message.content"></span>' +
-            //'</toast-message>' +
-            //'</ul>' +
-            //'</div>',
+            templateUrl: 'src/ts.toast.list.html',
+            link: function ($scope) {
+                $scope.messages = tsToast.messages;
+            }
+        };
+    };
+    ToastListDirective.$inject = ['$log', 'tsToast'];
+
+    angular.module('tsToast').directive('tsToastList', ToastListDirective);
+
+    var ToastMessageDirective = function ($log) {
+        return {
+            replace: true,
+            restrict: 'E',
+            templateUrl: 'src/ts.toast.message.html',
+            scope: {
+                message: '='
+            },
             link: function ($scope) {
 
             }
         };
     };
-    ToastDirective.$inject = ['$log'];
+    ToastMessageDirective.$inject = ['$log'];
 
-    angular.module('tsToast').directive('tsToast', ToastDirective);
+    angular.module('tsToast').directive('tsToastMessage', ToastMessageDirective);
 
 })(window, window.angular);

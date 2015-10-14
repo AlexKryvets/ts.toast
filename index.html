@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ts-app="app">
+<html ng-app="app">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Toast</title>
@@ -9,9 +9,9 @@
     <script type="text/javascript" src="src/ts.toast.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </head>
-<body ts-controller="AppController">
-<button ts-click="onOpenToastClick()">Open toast</button>
-<ts-toast></ts-toast>
+<body ng-controller="AppController">
+<button ng-click="onOpenToastClick()">Open toast</button>
+<ts-toast-list></ts-toast-list>
 
 <!--<div class="ts-toast ts-toast-right ts-toast-top">-->
     <!--<ul class="ts-toast-list">-->
@@ -27,26 +27,50 @@
     <!--</ul>-->
 <!--</div>-->
 
-<div class="ts-toast ts-toast-right ts-toast-top">
-    <ul class="ts-toast-list">
-        <li class="ts-toast-msg alert-success alert-dismissible" ts-repeat="message in messages" message="message">
-            <a class="ts-toast-close" ts-if="message.dismissButton" ts-bind-html="message.dismissButtonHtml" ts-click="!message.dismissOnClick &amp;&amp; dismiss()">
-                ×
-            </a>
-            <span class="ts-toast-sign glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <h4>Success</h4>
-            <span>message detail message detailmessage detail message detail</span>
-        </li>
-
-        <li class="ts-toast-msg alert-success alert-dismissible" ts-repeat="message in messages" message="message">
-            <a class="ts-toast-close" ts-if="message.dismissButton" ts-bind-html="message.dismissButtonHtml" ts-click="!message.dismissOnClick &amp;&amp; dismiss()">
-                ×
-            </a>
-            <span class="ts-toast-sign glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <h4>Success</h4>
-            <span>message detail </span>
-        </li>
-    </ul>
-</div>
+<!--<div class="ts-toast ts-toast-right ts-toast-top">-->
+    <!--<ul class="ts-toast-list">-->
+        <!--<li class="ts-toast-msg" ts-repeat="message in messages" message="message">-->
+            <!--<a class="ts-toast-close" ts-if="message.dismissButton" ts-bind-html="message.dismissButtonHtml" ts-click="!message.dismissOnClick &amp;&amp; dismiss()">-->
+                <!--×-->
+            <!--</a>-->
+            <!--<span class="ts-toast-sign glyphicon glyphicon-info-sign" aria-hidden="true"></span>-->
+            <!--<span>message detail message detailmessage detail message detail</span>-->
+        <!--</li>-->
+        <!--<li class="ts-toast-msg" ts-repeat="message in messages" message="message">-->
+            <!--<span>message detail message detailmessage detail message detail</span>-->
+        <!--</li>-->
+        <!--<li class="ts-toast-msg" ts-repeat="message in messages" message="message">-->
+            <!--<a class="ts-toast-close" ts-if="message.dismissButton" ts-bind-html="message.dismissButtonHtml" ts-click="!message.dismissOnClick &amp;&amp; dismiss()">-->
+                <!--×-->
+            <!--</a>-->
+            <!--<h4>Success</h4>-->
+            <!--<span>message detail message detailmessage detail message detail</span>-->
+        <!--</li>-->
+        <!--<li class="ts-toast-msg" ts-repeat="message in messages" message="message">-->
+            <!--<a class="ts-toast-close" ts-if="message.dismissButton" ts-bind-html="message.dismissButtonHtml" ts-click="!message.dismissOnClick &amp;&amp; dismiss()">-->
+                <!--×-->
+            <!--</a>-->
+            <!--<span class="ts-toast-sign glyphicon glyphicon-info-sign" aria-hidden="true"></span>-->
+            <!--<h4>Success</h4>-->
+            <!--<span>message detail message detailmessage detail message detail</span>-->
+        <!--</li>-->
+        <!--<li class="ts-toast-msg ts-toast-green" ts-repeat="message in messages" message="message">-->
+            <!--<a class="ts-toast-close" ts-if="message.dismissButton" ts-bind-html="message.dismissButtonHtml" ts-click="!message.dismissOnClick &amp;&amp; dismiss()">-->
+                <!--×-->
+            <!--</a>-->
+            <!--<span class="ts-toast-sign glyphicon glyphicon-ok-sign" aria-hidden="true"></span>-->
+            <!--<h4>Success</h4>-->
+            <!--<span>message detail message detailmessage detail message detail</span>-->
+        <!--</li>-->
+        <!--<li class="ts-toast-msg ts-toast-red" ts-repeat="message in messages" message="message">-->
+            <!--<a class="ts-toast-close" ts-if="message.dismissButton" ts-bind-html="message.dismissButtonHtml" ts-click="!message.dismissOnClick &amp;&amp; dismiss()">-->
+                <!--×-->
+            <!--</a>-->
+            <!--<span class="ts-toast-sign glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>-->
+            <!--<h4>Success</h4>-->
+            <!--<span>message detail message detailmessage detail message detail</span>-->
+        <!--</li>-->
+    <!--</ul>-->
+<!--</div>-->
 </body>
 </html>

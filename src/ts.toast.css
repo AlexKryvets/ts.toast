@@ -57,24 +57,35 @@
     list-style: none;
 }
 .ts-toast .ts-toast-msg {
-    padding: 10px 15px 10px 25px;
+    padding: 10px 20px;
     margin-bottom: 20px;
-    border: 1px solid transparent;
     position: relative;
 }
 
-.ts-toast-msg-green {
+.ts-toast-msg {
+    color: #474747;
+    background-color: #E4E4E4;
+    border: 1px solid transparent;
+}
+
+.ts-toast-green {
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6;
 }
+
+.ts-toast-red {
+    color: #A71505;
+    background-color: #FFF6F6;
+    border-color: #FFDFDF;
+}
+
 .ts-toast-sign {
     position: absolute;
     left: -5px;
     top: -5px;
     font-size: 20px;
 }
-
 
 .ts-toast-close {
     padding: 0px 5px;
@@ -95,7 +106,3 @@
     text-decoration: none;
     opacity: .5;
 }
-/*.ts-toast .ts-toast-msg-count {*/
-    /*display: inline-block;*/
-    /*margin: 0 15px 0 5px;*/
-/*}*/
