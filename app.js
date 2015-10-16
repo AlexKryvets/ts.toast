@@ -4,6 +4,14 @@ angular.module('app').config(AppConfig);
 
 function AppConfig (tsToastProvider) {
     console.log(tsToastProvider);
+    tsToastProvider.configure("main", {
+        verticalAlign: "top",
+        horizontalAlign: "right"
+    });
+    tsToastProvider.configure("one", {
+        verticalAlign: "top",
+        horizontalAlign: "left"
+    });
 }
 AppConfig.$inject = ['tsToastProvider'];
 

@@ -8,17 +8,37 @@
     angular.module('tsToast').directive('tsToastMessage', ToastMessageDirective);
 
     function ToastProvider() {
-        var messages = [{
-            title: 'Success',
-            text: 'Connection ok!'
-        },
-        {
-            title: 'Error',
-            text: 'Connection failed!'
-        }];
+        var messageList =  [
+            {
+                title: 'Success',
+                text: 'Connection ok!'
+            },
+            {
+                title: 'Error',
+                text: 'Connection failed!'
+            }
+        ];
+        var toastList = {
+        };
+
+        this.configure = function (name, configuration) {
+            if (toastList[name] !== undefined) {
+                throw new Error("Toast container \"" + name + "\" has been configured");
+            }
+            toastList[name] = {configuration: configuration};
+            //Todo: mock
+            toastList[name].messageList = messageList;
+        };
+
         this.$get = function () {
             return {
-                messages: messages
+                getToast: function (name) {
+                    if (toastList[name]) {
+                        return toastList[name];
+                    } else {
+                        throw new Error("Toast container \"" + name + "\" must be configured");
+                    }
+                }
             }
         };
     }
@@ -30,13 +50,12 @@
             restrict: 'E',
             templateUrl: 'src/ts.toast.list.html',
             link: function (scope, element, attr) {
-                scope.messages = tsToast.messages;
+                scope.toast = tsToast.getToast(attr.name);
+                console.log( scope.toast)
             }
         };
     }
     ToastListDirective.$inject = ['$log', 'tsToast'];
-
-
 
     function ToastMessageDirective($log) {
         return {
