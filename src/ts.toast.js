@@ -3,35 +3,42 @@
     'use strict';
 
     angular.module('tsToast', []);
+    angular.module('tsToast').provider('tsToast', ToastProvider);
+    angular.module('tsToast').directive('tsToastList', ToastListDirective);
+    angular.module('tsToast').directive('tsToastMessage', ToastMessageDirective);
 
-    var ToastProvider = function () {
-        var messages = [{title: 'Success', text: 'Connection ok!'}, {title: 'Error', text: 'Connection failed!'}];
+    function ToastProvider() {
+        var messages = [{
+            title: 'Success',
+            text: 'Connection ok!'
+        },
+        {
+            title: 'Error',
+            text: 'Connection failed!'
+        }];
         this.$get = function () {
             return {
                 messages: messages
             }
         };
-    };
-
+    }
     ToastProvider.$inject = [];
 
-    angular.module('tsToast').provider('tsToast', ToastProvider);
-
-    var ToastListDirective = function ($log, tsToast) {
+    function ToastListDirective($log, tsToast) {
         return {
             replace: true,
             restrict: 'E',
             templateUrl: 'src/ts.toast.list.html',
-            link: function ($scope) {
-                $scope.messages = tsToast.messages;
+            link: function (scope, element, attr) {
+                scope.messages = tsToast.messages;
             }
         };
-    };
+    }
     ToastListDirective.$inject = ['$log', 'tsToast'];
 
-    angular.module('tsToast').directive('tsToastList', ToastListDirective);
 
-    var ToastMessageDirective = function ($log) {
+
+    function ToastMessageDirective($log) {
         return {
             replace: true,
             restrict: 'E',
@@ -39,13 +46,11 @@
             scope: {
                 message: '='
             },
-            link: function ($scope) {
+            link: function (scope, element, attr) {
 
             }
         };
-    };
+    }
     ToastMessageDirective.$inject = ['$log'];
-
-    angular.module('tsToast').directive('tsToastMessage', ToastMessageDirective);
 
 })(window, window.angular);
