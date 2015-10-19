@@ -1,5 +1,5 @@
-<li class="ts-toast-msg">
-    <a class="ts-toast-close" ng-if="message.closeButton" ng-click="dismiss()">
+<li class="ts-toast-msg ts-toast-{{message.theme}}" ng-click="message.closeOnClick && close()">
+    <a class="ts-toast-close" ng-if="message.showCloseButton" ng-click="close()">
         ×
     </a>
     <span class="ts-toast-sign glyphicon glyphicon-info-sign"></span>

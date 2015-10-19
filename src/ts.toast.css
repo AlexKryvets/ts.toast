@@ -4,7 +4,6 @@
     width: 100%;
     height: 0;
     margin-top: 20px;
-    /*text-align: center;*/
 }
 .ts-toast.ts-toast-top {
     top: 0;
@@ -14,9 +13,6 @@
     top: 0;
     bottom: auto;
 }
-.ts-toast.ts-toast-top.ts-toast-center .ts-toast-list {
-    position: static;
-}
 .ts-toast.ts-toast-bottom {
     top: auto;
     bottom: 0;
@@ -25,27 +21,18 @@
     top: auto;
     bottom: 0;
 }
-.ts-toast.ts-toast-bottom.ts-toast-center .ts-toast-list {
-    pointer-events: none;
-}
-.ts-toast.ts-toast-bottom.ts-toast-center .ts-toast-msg .alert {
-    pointer-events: auto;
-}
 .ts-toast.ts-toast-right .ts-toast-list {
     left: auto;
     right: 0;
     margin-right: 20px;
-}
-.ts-toast.ts-toast-right .ts-toast-msg {
-    /*text-align: right;*/
 }
 .ts-toast.ts-toast-left .ts-toast-list {
     right: auto;
     left: 0;
     margin-left: 20px;
 }
-.ts-toast.ts-toast-left .ts-toast-msg {
-    /*text-align: left;*/
+.ts-toast.ts-toast-center .ts-toast-list {
+    margin: 0 auto;
 }
 .ts-toast .ts-toast-list {
     display: inline-block;
