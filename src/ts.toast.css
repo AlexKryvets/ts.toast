@@ -33,22 +33,27 @@
 }
 .ts-toast.ts-toast-center .ts-toast-list {
     margin: 0 auto;
+    left: 0;
+    right: 0;
 }
 .ts-toast .ts-toast-list {
-    display: inline-block;
     position: absolute;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
     padding: 0;
     list-style: none;
+}
+.ts-toast.ts-toast-right .ts-toast-list li {
+    text-align: right;
+}
+.ts-toast.ts-toast-center .ts-toast-list li {
+    text-align: center;
 }
 .ts-toast .ts-toast-msg {
     padding: 10px 20px;
     margin-bottom: 20px;
     position: relative;
+    display: inline-block;
+    text-align: left;
 }
-
 .ts-toast-msg {
     color: #474747;
     background-color: #E4E4E4;
