@@ -1,26 +1,33 @@
-angular.module('app', ['tsToast']);
+angular.module('app', ['tsToast', 'ngAnimate']);
 
 angular.module('app').config(AppConfig);
 
 function AppConfig (tsToastProvider) {
     tsToastProvider.configure("left-top", {
+        animation: "slide",
         verticalAlign: "top",
         horizontalAlign: "left"
     }, {
-        theme: 'green'
+        theme: 'green',
+        icon: 'glyphicon glyphicon-ok-sign'
     });
     tsToastProvider.configure("right-top", {
-        verticalAlign: "top",
+        animation: "slide",
+        verticalAlign: "bottom",
         horizontalAlign: "right"
     }, {
         showCloseButton: false,
-        closeOnClick: true
+        closeOnClick: true,
+        closeOnTimeout: false,
+        icon: 'glyphicon glyphicon-info-sign'
     });
     tsToastProvider.configure("center-bottom", {
-        verticalAlign: "bottom",
+        animation: "slide",
+        verticalAlign: "top",
         horizontalAlign: "center"
     }, {
-        theme: 'red'
+        theme: 'red',
+        icon: 'glyphicon glyphicon-exclamation-sign'
     });
 }
 AppConfig.$inject = ['tsToastProvider'];
@@ -37,11 +44,11 @@ function AppController ($scope, tsToast) {
     ltToast.addMessage({title: "Hello", text: "asdadasdasdadadadad", theme: ""});
     ltToast.addMessage({title: "Hello", text: "adsadasdddddddddddddddddddddddddada", theme: "red"});
 
-    rbToast.addMessage({title: "Hello", text: "oneyuiyuiyuiy"});
+    rbToast.addMessage({text: "oneyuiyuiyuiy"});
     rbToast.addMessage({title: "Hello", text: "asdadasdasdadadadad", theme: ""});
     rbToast.addMessage({title: "Hello", text: "adsadasdddddddddddddddddddddddddada", theme: "red"});
 
-    cbToast.addMessage({title: "Hello", text: "oneyuiyuiyuiy"});
+    cbToast.addMessage({});
     cbToast.addMessage({title: "Hello", text: "asdadasdasdadadadad", theme: ""});
     cbToast.addMessage({title: "Hello", text: "adsadasdddddddddddddddddddddddddada", theme: "red"});
 

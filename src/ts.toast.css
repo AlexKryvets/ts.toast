@@ -59,26 +59,22 @@
     background-color: #E4E4E4;
     border: 1px solid transparent;
 }
-
 .ts-toast-green {
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6;
 }
-
 .ts-toast-red {
     color: #A71505;
     background-color: #FFF6F6;
     border-color: #FFDFDF;
 }
-
 .ts-toast-sign {
     position: absolute;
     left: -5px;
     top: -5px;
     font-size: 20px;
 }
-
 .ts-toast-close {
     padding: 0px 5px;
     position: absolute;
@@ -93,8 +89,126 @@
     color: #000;
     opacity: .2;
 }
-
 .ts-toast-close:hover, .ts-toast-close:focus {
     text-decoration: none;
     opacity: .5;
+}
+
+.ts-toast-animate-fade .ng-enter,
+.ts-toast-animate-fade .ng-leave,
+.ts-toast-animate-fade .ng-move {
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+.ts-toast-animate-fade .ng-enter {
+    opacity: 0;
+}
+.ts-toast-animate-fade .ng-enter.ng-enter-active {
+    opacity: 1;
+}
+.ts-toast-animate-fade .ng-leave {
+    opacity: 1;
+}
+.ts-toast-animate-fade .ng-leave.ng-leave-active {
+    opacity: 0;
+}
+.ts-toast-animate-fade .ng-move {
+    opacity: 0.5;
+}
+.ts-toast-animate-fade .ng-move.ng-move-active {
+    opacity: 1;
+}
+
+.ts-toast-animate-slide .ng-enter,
+.ts-toast-animate-slide .ng-leave,
+.ts-toast-animate-slide .ng-move {
+    position: relative;
+    transition-duration: .5s;
+    transition-timing-function: ease;
+}
+.ts-toast-animate-slide.ts-toast-center.ts-toast-top {
+    position: relative;
+    transition-property: top, margin-top, opacity;
+}
+.ts-toast-animate-slide.ts-toast-center.ts-toast-top .ng-enter {
+    opacity: 0;
+    top: -100px;
+}
+.ts-toast-animate-slide.ts-toast-center.ts-toast-top .ng-enter.ng-enter-active {
+    opacity: 1;
+    top: 0;
+}
+.ts-toast-animate-slide.ts-toast-center.ts-toast-top .ng-leave {
+    opacity: 1;
+    top: 0;
+}
+.ts-toast-animate-slide.ts-toast-center.ts-toast-top .ng-leave.ng-leave-active {
+    opacity: 0;
+    margin-top: -72px;
+}
+.ts-toast-animate-slide.ts-toast-center.ts-toast-bottom {
+    transition-property: bottom, margin-bottom, opacity;
+}
+.ts-toast-animate-slide.ts-toast-center.ts-toast-bottom .ng-enter {
+    opacity: 0;
+    bottom: -100px;
+}
+.ts-toast-animate-slide.ts-toast-center.ts-toast-bottom .ng-enter.ng-enter-active {
+    opacity: 1;
+    bottom: 0;
+}
+.ts-toast-animate-slide.ts-toast-center.ts-toast-bottom .ng-leave {
+    opacity: 1;
+    bottom: 0;
+}
+.ts-toast-animate-slide.ts-toast-center.ts-toast-bottom .ng-leave.ng-leave-active {
+    opacity: 0;
+    margin-bottom: -72px;
+}
+.ts-toast-animate-slide.ts-toast-right {
+    transition-property: right, margin-right, opacity;
+}
+.ts-toast-animate-slide.ts-toast-right .ng-enter {
+    opacity: 0;
+    right: -200%;
+    margin-right: 20px;
+}
+.ts-toast-animate-slide.ts-toast-right .ng-enter.ng-enter-active {
+    opacity: 1;
+    right: 0;
+    margin-right: 0;
+}
+.ts-toast-animate-slide.ts-toast-right .ng-leave {
+    opacity: 1;
+    right: 0;
+    margin-right: 0;
+}
+.ts-toast-animate-slide.ts-toast-right .ng-leave.ng-leave-active {
+    opacity: 0;
+    right: -200%;
+    margin-right: 20px;
+}
+.ts-toast-animate-slide.ts-toast-left {
+    transition-property: left, margin-left, opacity;
+}
+.ts-toast-animate-slide.ts-toast-left .ng-enter {
+    opacity: 0;
+    left: -200%;
+    margin-left: 20px;
+}
+.ts-toast-animate-slide.ts-toast-left .ng-enter.ng-enter-active {
+    opacity: 1;
+    left: 0;
+    margin-left: 0;
+}
+.ts-toast-animate-slide.ts-toast-left .ng-leave {
+    opacity: 1;
+    left: 0;
+    margin-left: 0;
+}
+.ts-toast-animate-slide.ts-toast-left .ng-leave.ng-leave-active {
+    opacity: 0;
+    left: -200%;
+    margin-left: 20px;
 }

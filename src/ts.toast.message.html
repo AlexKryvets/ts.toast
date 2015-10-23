@@ -1,8 +1,8 @@
-<div class="ts-toast-msg ts-toast-{{message.theme}}" ng-click="message.closeOnClick && close()">
+<div class="ts-toast-msg ts-toast-{{message.theme}}" ng-click="message.closeOnClick && close()" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()">
     <a class="ts-toast-close" ng-if="message.showCloseButton" ng-click="close()">
         ×
     </a>
-    <span class="ts-toast-sign glyphicon glyphicon-info-sign"></span>
-    <h4>{{message.title}}</h4>
-    <span>{{message.text}}</span>
+    <span ng-if="message.icon" class="ts-toast-sign {{message.icon}}"></span>
+    <h4 ng-if="message.title">{{message.title}}</h4>
+    <span ng-if="message.text">{{message.text}}</span>
 </div>

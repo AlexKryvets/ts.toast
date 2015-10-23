@@ -8,9 +8,8 @@
     angular.module('tsToast').directive('tsToastMessage', ToastMessageDirective);
 
     var TOAST_CONTAINER_CONFIGURATION = {
-        //animation: false,
-        //compileContent: false,
-        //combineDuplications: false,
+        animation: false,
+        maxCount: 5,
         verticalAlign: "top",
         horizontalAlign: "right",
         maxNumber: 0
@@ -18,6 +17,7 @@
 
     var TOAST_MESSAGE_CONFIGURATION = {
         theme: '',
+        icon: false,
         closeOnTimeout: true,
         closeTimeout: 4000,
         showCloseButton: true,
@@ -44,6 +44,7 @@
         } else if (this.verticalAlign == 'bottom') {
             this.messageList.unshift(message);
         }
+        return message;
     };
     ToastContainer.prototype.removeMessage = function (message) {
         for (var i = this.messageList.length - 1; i >= 0; i--) {
@@ -98,7 +99,7 @@
 
     ToastProvider.$inject = [];
 
-    function ToastListDirective($log, tsToast) {
+    function ToastListDirective(tsToast) {
         return {
             replace: true,
             restrict: 'E',
@@ -114,9 +115,9 @@
         };
     }
 
-    ToastListDirective.$inject = ['$log', 'tsToast'];
+    ToastListDirective.$inject = ['tsToast'];
 
-    function ToastMessageDirective($log) {
+    function ToastMessageDirective($timeout) {
         return {
             replace: true,
             restrict: 'E',
@@ -125,13 +126,38 @@
                 message: '='
             },
             link: function (scope, element, attr) {
+
+                var timeoutId;
+
                 scope.close = function () {
                     scope.$emit("ts:toast:closeMessage", scope.message);
                 };
+
+                var cancelTimeout = function() {
+                    $timeout.cancel(timeoutId);
+                };
+
+                var startTimeout = function() {
+                    if (scope.message.closeOnTimeout) {
+                        timeoutId = $timeout(function() {
+                            scope.$emit("ts:toast:closeMessage", scope.message);
+                        }, scope.message.closeTimeout);
+                    }
+                };
+
+                scope.onMouseEnter = function() {
+                    cancelTimeout();
+                };
+
+                scope.onMouseLeave = function() {
+                    startTimeout();
+                };
+
+                startTimeout();
             }
         };
     }
 
-    ToastMessageDirective.$inject = ['$log'];
+    ToastMessageDirective.$inject = ['$timeout'];
 
 })(window, window.angular);

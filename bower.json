@@ -12,6 +12,7 @@
     ],
     "dependencies": {
         "angular": "~1.4.*",
-        "bootstrap": "~3.3.*"
+        "bootstrap": "~3.3.*",
+        "angular-animate": "*"
     }
 }
