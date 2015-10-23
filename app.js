@@ -1,4 +1,4 @@
-angular.module('app', ['tsToast', 'ngAnimate']);
+angular.module('app', ['ts.toast', 'ngAnimate']);
 
 angular.module('app').config(AppConfig);
 

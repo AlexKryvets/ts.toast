@@ -2,10 +2,10 @@
 
     'use strict';
 
-    angular.module('tsToast', []);
-    angular.module('tsToast').provider('tsToast', ToastProvider);
-    angular.module('tsToast').directive('tsToastList', ToastListDirective);
-    angular.module('tsToast').directive('tsToastMessage', ToastMessageDirective);
+    angular.module('ts.toast', []);
+    angular.module('ts.toast').provider('tsToast', ToastProvider);
+    angular.module('ts.toast').directive('tsToastList', ToastListDirective);
+    angular.module('ts.toast').directive('tsToastMessage', ToastMessageDirective);
 
     var TOAST_CONTAINER_CONFIGURATION = {
         animation: false,
