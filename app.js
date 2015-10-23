@@ -14,7 +14,8 @@ function AppConfig (tsToastProvider) {
     tsToastProvider.configure("right-top", {
         animation: "slide",
         verticalAlign: "bottom",
-        horizontalAlign: "right"
+        horizontalAlign: "right",
+        messageLimit: false
     }, {
         showCloseButton: false,
         closeOnClick: true,
@@ -22,9 +23,10 @@ function AppConfig (tsToastProvider) {
         icon: 'glyphicon glyphicon-info-sign'
     });
     tsToastProvider.configure("center-bottom", {
-        animation: "slide",
-        verticalAlign: "top",
-        horizontalAlign: "center"
+        animation: "fade",
+        verticalAlign: "bottom",
+        horizontalAlign: "center",
+        messageLimit: 1
     }, {
         theme: 'red',
         icon: 'glyphicon glyphicon-exclamation-sign'

@@ -9,7 +9,7 @@
 
     var TOAST_CONTAINER_CONFIGURATION = {
         animation: false,
-        maxCount: 5,
+        messageLimit: 5,
         verticalAlign: "top",
         horizontalAlign: "right",
         maxNumber: 0
