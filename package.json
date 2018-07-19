@@ -1,10 +1,11 @@
 {
-  "name": "ts.toast",
+  "name": "@teamsoft/toast",
   "version": "0.0.3",
   "description": "",
   "main": "ts.toast.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "make:patch": "unleash --patch"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AlexKryvets/ts.toast/issues"
   },
-  "homepage": "https://github.com/AlexKryvets/ts.toast#readme"
+  "homepage": "https://github.com/AlexKryvets/ts.toast#readme",
+  "devDependencies": {
+    "unleash": "^2.0.1"
+  }
 }
