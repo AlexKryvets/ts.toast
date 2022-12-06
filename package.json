@@ -1,6 +1,6 @@
 {
   "name": "@teamsoft/toast",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "",
   "main": "ts.toast.js",
   "scripts": {

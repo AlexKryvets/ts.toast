@@ -103,7 +103,7 @@
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'template/ts.toast.list.html',
+            template: require('./template/ts.toast.list.html'),
             scope: {},
             link: function (scope, element, attr) {
                 var toastContainer = tsToast(attr.name);
@@ -121,7 +121,7 @@
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'template/ts.toast.message.html',
+            template: require('./template/ts.toast.message.html'),
             scope: {
                 message: '='
             },
